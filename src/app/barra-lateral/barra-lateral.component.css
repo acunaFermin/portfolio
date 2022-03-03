@@ -1,0 +1,70 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(27, 27, 27);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(12, 12, 12);
+}
+
+.nombre-container {
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(12, 12, 12);
+  margin-bottom: 100px;
+  cursor: pointer;
+}
+
+.nombre-container p {
+  font-weight: 300;
+}
+.nombre {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: rgba(255, 255, 255);
+}
+
+.menu-container {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.383);
+}
+
+.button {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.383);
+  cursor: pointer;
+  font-size: 18px;
+  background-color: rgba(255, 255, 255, 0);
+  transition: all 0.2s linear;
+}
+
+.button h4 {
+  font-weight: 300;
+  color: rgba(240, 248, 255, 0.705);
+}
+
+.button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.button:hover h4 {
+  color: rgba(240, 248, 255, 1);
+}
