@@ -21,9 +21,28 @@
   cursor: pointer;
 }
 
-.nombre-container p {
+.logo {
+  width: 150px;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+/****** color logo ***********/
+.logoFA {
+  fill: #6ad380;
+}
+.cls-2 {
+  fill: none;
+}
+
+.nombre-container h3 {
   font-weight: 300;
 }
+.nombre-container p {
+  font-weight: 100;
+  font-size: small;
+}
+
 .nombre {
   width: 80%;
   display: flex;
@@ -31,7 +50,14 @@
   align-items: center;
   text-align: center;
   color: rgba(255, 255, 255);
+  transition: all 0.2s linear;
 }
+
+.nombre-container:hover .nombre {
+  color: #6ad380;
+}
+
+/******** menu **********/
 
 .menu-container {
   width: 100%;
@@ -40,6 +66,7 @@
   flex-direction: column;
   align-items: center;
   border-top: 1px solid rgba(255, 255, 255, 0.383);
+  margin-bottom: 100px;
 }
 
 .button {
@@ -59,6 +86,7 @@
 .button h4 {
   font-weight: 300;
   color: rgba(240, 248, 255, 0.705);
+  transition: all 0.2s linear;
 }
 
 .button:hover {
@@ -66,5 +94,33 @@
 }
 
 .button:hover h4 {
-  color: rgba(240, 248, 255, 1);
+  color: #6ad380;
+}
+
+/******* iconos linkedin y github ********/
+
+.icon-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80%;
+  height: 100px;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.iconSVG {
+  stroke: none;
+  fill-rule: nonzero;
+  fill: rgb(100%, 100%, 100%);
+  fill-opacity: 1;
+  transition: all 0.2s linear;
+}
+
+.icon:hover .iconSVG {
+  fill: #6ad380;
 }
