@@ -31,6 +31,24 @@
   font-weight: 100;
 }
 
+@media (max-width: 1024px) {
+  .container-cuerpo {
+    width: calc(100% - 50px);
+    padding-left: 50px;
+  }
+
+  .quienSoy h1 {
+    font-weight: 400;
+    font-size: 10vw;
+  }
+
+  .quienSoy p {
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 100;
+  }
+}
+
 /**********curva*********/
 
 .curva {
@@ -50,35 +68,29 @@
   position: absolute;
   border-radius: 50%;
   background: #08e275;
+  width: 500px;
+  height: 500px;
 }
 
 .c1 {
   top: 40%;
   left: 70%;
-  width: 500px;
-  height: 500px;
-  animation: movingCircles 5s ease-in-out infinite alternate;
+  animation: movingCircles 4s ease-in-out infinite alternate;
 }
 .c2 {
-  top: 10%;
+  top: 20%;
   left: 60%;
-  width: 500px;
-  height: 500px;
-  animation: movingCircles 10s ease-in-out infinite alternate;
+  animation: movingCircles 3s ease-in-out infinite alternate;
 }
 .c3 {
   top: 0%;
   left: 70%;
-  width: 500px;
-  height: 500px;
-  animation: movingCircles 15s ease-in-out infinite alternate;
+  animation: movingCircles 7s ease-in-out infinite alternate;
 }
 .c4 {
-  top: 0%;
+  top: 10%;
   left: 50%;
-  width: 500px;
-  height: 500px;
-  animation: movingCircles 20s ease-in-out infinite alternate;
+  animation: movingCircles 13s ease-in-out infinite alternate;
 }
 
 svg {
@@ -88,18 +100,20 @@ svg {
 
 @keyframes movingCircles {
   0% {
-    transform: translate(-10%, 50%);
-    width: 500px;
-    height: 500px;
+    transform: translate(-10%, -70%);
   }
   50% {
-    transform: translate(20%, 100%);
-    width: 450px;
-    height: 500px;
+    transform: translate(20%, 30%);
   }
   100% {
-    transform: translate(5%, -100%);
-    width: 500px;
-    height: 550px;
+    transform: translate(5%, 100%);
+  }
+}
+
+@media (max-width: 1024px) {
+  .circle {
+    width: 60vw;
+    height: 60vw;
+    left: 50%;
   }
 }
