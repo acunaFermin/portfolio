@@ -19,11 +19,10 @@ p {
 }
 
 .container {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
-  background-color: rgb(245, 245, 245);
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
 }
 
 .barra-lateral {
@@ -31,4 +30,10 @@ p {
   width: 250px;
   height: 100vh;
   background-color: aqua;
+}
+
+.cuerpo {
+  position: relative;
+  width: calc(100% - 250px);
+  height: 100vh;
 }
