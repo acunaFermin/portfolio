@@ -65,9 +65,9 @@
   position: absolute;
   overflow: visible;
   top: 0%;
-  left: 0%;
+  left: 250px;
   height: 100vh;
-  width: 100%;
+  width: calc(100% - 250px);
   overflow: hidden;
   border: none;
   line-height: 170px;
@@ -152,6 +152,11 @@ p {
     margin-left: 0;
     padding-left: 30px;
   }
+
+  .curva {
+    left: 0;
+    width: 100%;
+  }
 }
 
 @media (max-height: 800px) {
@@ -159,5 +164,9 @@ p {
     width: calc(100% - 30px);
     margin-left: 0;
     padding-left: 30px;
+  }
+  .curva {
+    left: 0;
+    width: 100%;
   }
 }

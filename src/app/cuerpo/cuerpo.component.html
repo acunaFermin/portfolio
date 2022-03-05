@@ -1,7 +1,7 @@
-<app-barra-lateral></app-barra-lateral>
+<app-barra-lateral (lateralBtn)="receptValue($event)"></app-barra-lateral>
 
 <div class="container-cuerpo">
-  <div class="page-container">
+  <div id="init" class="page-container">
     <div class="quienSoy">
       <h1>Hola!,</h1>
       <h1>Soy Fermín,</h1>
@@ -32,9 +32,8 @@
       />
     </filter>
   </svg>
-  <br />
   <!-- descripcion -->
-  <div class="page-container">
+  <div id="quienSoy" class="page-container">
     <h2>Quién soy?</h2>
     <p>
       Un ingeniero electromecánico que ha decidido explorar una vida dedicada al
@@ -44,9 +43,8 @@
       asi como también ambición para desarrollar grandes proyectos.
     </p>
   </div>
-  <br />
   <!-- habilidades -->
-  <div class="page-container">
+  <div id="habilidades" class="page-container">
     <h2>Qué puedo hacer?</h2>
     <ul>
       <li>
@@ -66,16 +64,14 @@
       </li>
     </ul>
   </div>
-  <br />
   <!-- experciencia -->
-  <div class="page-container">
+  <div id="experiencia" class="page-container">
     <h2>Cuáles son mis herramientas?</h2>
     <p>
       Todo lo que he aprendido en los cursos que continuamente estoy tomando,
       incluso hasta cuando viajo en el colectivo...
     </p>
 
-    <br />
     <h3>Algunas de las tecnologías que manejo son</h3>
     <ul>
       <li>Javascript</li>
