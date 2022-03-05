@@ -1,19 +1,20 @@
 .container-cuerpo {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 350px);
+  padding-left: 100px;
+  margin-left: 250px;
+  background-color: rgba(0, 0, 0, 0.93);
+  color: rgba(255, 255, 255, 0.897);
+}
+
+.page-container {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: calc(100% - 100px);
-  padding-left: 100px;
-  background-color: rgba(0, 0, 0, 0.52);
-}
-
-.quienSoy-container {
-  position: relative;
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  align-items: center;
-  font-size: 50px;
+  width: 550px;
+  min-height: 100vh;
+  justify-content: center;
   z-index: 10;
 }
 
@@ -22,11 +23,13 @@
 }
 
 .quienSoy h1 {
+  font-size: 80px;
   font-weight: 400;
+  margin-bottom: -20px;
 }
 
 .quienSoy p {
-  margin-top: 20px;
+  margin-top: 60px;
   font-size: 35px;
   font-weight: 100;
 }
@@ -39,13 +42,20 @@
 
   .quienSoy h1 {
     font-weight: 400;
-    font-size: 10vw;
+    font-size: 8vw;
+    margin-bottom: -2vw;
   }
 
   .quienSoy p {
-    margin-top: 20px;
-    font-size: 15px;
+    font-size: 4vw;
     font-weight: 100;
+    margin-top: 7vw;
+  }
+}
+
+@media (max-width: 700px) {
+  .page-container {
+    width: 80%;
   }
 }
 
@@ -115,5 +125,39 @@ svg {
     width: 60vw;
     height: 60vw;
     left: 50%;
+  }
+}
+
+ul {
+  margin-top: 10px;
+
+  padding-left: 25px;
+}
+
+li {
+  font-weight: 300;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+p {
+  font-weight: 300;
+}
+
+@media (max-width: 1024px) {
+  .container-cuerpo {
+    width: calc(100% - 30px);
+    margin-left: 0;
+    padding-left: 30px;
+  }
+}
+
+@media (max-height: 800px) {
+  .container-cuerpo {
+    width: calc(100% - 30px);
+    margin-left: 0;
+    padding-left: 30px;
   }
 }
