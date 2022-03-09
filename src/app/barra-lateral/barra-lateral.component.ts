@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-barra-lateral',
@@ -7,12 +7,27 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class BarraLateralComponent implements OnInit {
   @Output() lateralBtn = new EventEmitter<any>();
+  @Input() scrollIndex!: number;
+  status: boolean = false;
 
-  constructor() {}
+  constructor() {
+    console.log(window.visualViewport.width);
+  }
+  ngOnInit(): void {}
 
   buttonPressed(value: string) {
     this.lateralBtn.emit(value);
+
+    //checkeo que no este en modo responsive
+    if (
+      window.visualViewport.width < 1024 ||
+      window.visualViewport.height < 800
+    ) {
+      this.status = !this.status;
+    }
   }
 
-  ngOnInit(): void {}
+  desplegar() {
+    this.status = !this.status;
+  }
 }

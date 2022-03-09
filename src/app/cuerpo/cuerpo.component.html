@@ -1,7 +1,14 @@
-<app-barra-lateral (lateralBtn)="receptValue($event)"></app-barra-lateral>
+<app-barra-lateral
+  (lateralBtn)="scroll($event)"
+  [scrollIndex]="scrollIndex"
+></app-barra-lateral>
 
-<div class="container-cuerpo">
-  <div id="init" class="page-container">
+<div class="container-cuerpo" [ngClass]="{ 'fix-body': mailInput }">
+  <div
+    id="init"
+    class="page-container"
+    [ngClass]="{ 'show-up': scrollIndex === 0 }"
+  >
     <div class="quienSoy">
       <h1>Hola!,</h1>
       <h1>Soy Fermín,</h1>
@@ -33,8 +40,12 @@
     </filter>
   </svg>
   <!-- descripcion -->
-  <div id="quienSoy" class="page-container">
-    <h2>Quién soy?</h2>
+  <div
+    id="quienSoy"
+    class="page-container"
+    [ngClass]="{ 'show-up': scrollIndex === 1 }"
+  >
+    <h2>Sobre mi</h2>
     <p>
       Un ingeniero electromecánico que ha decidido explorar una vida dedicada al
       desarrollo web y de software en general. Estoy abierto al desarrollo de
@@ -44,9 +55,14 @@
     </p>
   </div>
   <!-- habilidades -->
-  <div id="habilidades" class="page-container">
-    <h2>Qué puedo hacer?</h2>
+  <div
+    id="habilidades"
+    class="page-container"
+    [ngClass]="{ 'show-up': scrollIndex === 2 }"
+  >
+    <h2>Habilidades</h2>
     <ul>
+      <li>Resposive web design</li>
       <li>
         Desarrollo de páginas y aplicaciones web en todo el stack, que necesiten
         almacenar datos o simplemente, páginas estáticas.
@@ -55,7 +71,7 @@
       <li>Comunicación en tiempo real.</li>
       <li>Aplicaciones que requieran cálculos con cierta complejidad.</li>
       <li>
-        Manejo de sesiones con usuarios que requiran ver contenido mas delicado
+        Manejo de sesiones con usuarios que requieran ver contenido mas delicado
         en función de los roles que posean.
       </li>
       <li>
@@ -65,32 +81,109 @@
     </ul>
   </div>
   <!-- experciencia -->
-  <div id="experiencia" class="page-container">
-    <h2>Cuáles son mis herramientas?</h2>
+  <div
+    id="experiencia"
+    class="page-container"
+    [ngClass]="{ 'show-up': scrollIndex === 3 }"
+  >
+    <h2>Mis herramientas</h2>
     <p>
       Todo lo que he aprendido en los cursos que continuamente estoy tomando,
-      incluso hasta cuando viajo en el colectivo...
+      incluso hasta cuando viajo en el colectivo. Algunas de las tecnologías que
+      manejo son:
     </p>
+    <br />
+    <div class="tools">
+      <a id="tool-item-1-1" class="tool-item">Javascript</a>
+      <a id="tool-item-1-2" class="tool-item">html</a>
+      <a id="tool-item-1-3" class="tool-item">CSS</a>
+      <a id="tool-item-2-1" class="tool-item">Bootstrap</a>
+      <a id="tool-item-2-2" class="tool-item">Angular 2 +</a>
+      <a id="tool-item-2-3" class="tool-item">Typescript</a>
+      <a id="tool-item-3-1" class="tool-item">Angular Material</a>
+      <a id="tool-item-3-2" class="tool-item">ChartJS</a>
+      <a id="tool-item-3-3" class="tool-item">SQL</a>
+      <a id="tool-item-4-1" class="tool-item">MongoDB</a>
+      <a id="tool-item-4-2" class="tool-item">Mongoose</a>
+      <a id="tool-item-4-3" class="tool-item">NodeJS</a>
+      <a id="tool-item-5-1" class="tool-item">Express</a>
+      <a id="tool-item-5-2" class="tool-item">NestJS</a>
+      <a id="tool-item-5-3" class="tool-item">TypeORM</a>
+      <a id="tool-item-6-1" class="tool-item">Socket IO</a>
+      <a id="tool-item-6-2" class="tool-item">Linux</a>
+      <a id="tool-item-6-3" class="tool-item">Nginx</a>
+    </div>
+  </div>
+  <!-- contacto -->
+  <div
+    style="overflow-anchor: none"
+    id="form"
+    class="page-container"
+    [ngClass]="{
+      'show-up': scrollIndex === 4 || mailInput,
+      fix: mailInput
+    }"
+  >
+    <form
+      id="contacto"
+      #contacto
+      [formGroup]="mailForm"
+      (ngSubmit)="(onSubmit)"
+    >
+      <h2>Contactame</h2>
+      <p>Dale mandame un mnsj</p>
 
-    <h3>Algunas de las tecnologías que manejo son</h3>
-    <ul>
-      <li>Javascript</li>
-      <li>html</li>
-      <li>CSS</li>
-      <li>Bootstrap</li>
-      <li>Angular 2 +</li>
-      <li>Typescript</li>
-      <li>Angular Material</li>
-      <li>ChartJS</li>
-      <li>SQL</li>
-      <li>MongoDB</li>
-      <li>NodeJS</li>
-      <li>Express</li>
-      <li>NestJS</li>
-      <li>Socket IO</li>
-      <li>Linux</li>
-      <li>Nginx</li>
-      <li>Y algunas otras...</li>
-    </ul>
+      <div class="contacto-container">
+        <div class="emiter">
+          <div class="data name">
+            <h5>Name</h5>
+            <input
+              (click)="scroll(undefined, true)"
+              type="text"
+              formControlName="name"
+            />
+          </div>
+
+          <div class="data email">
+            <h5>Email</h5>
+            <input
+              (click)="scroll(undefined, true)"
+              type="text"
+              formControlName="email"
+            />
+          </div>
+        </div>
+        <div class="content">
+          <h5>subject</h5>
+          <input
+            (click)="scroll(undefined, true)"
+            type="text"
+            formControlName="subject"
+          />
+        </div>
+        <div class="content message">
+          <h5>Message</h5>
+          <textarea
+            (click)="scroll(undefined, true)"
+            formControlName="message"
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+          >
+            <h5>Message</h5>
+
+          </textarea>
+        </div>
+
+        <button
+          class="submit-btn"
+          (click)="onSubmit()"
+          [disabled]="!mailForm.valid"
+        >
+          <h5>Enviar</h5>
+        </button>
+      </div>
+    </form>
   </div>
 </div>

@@ -4,6 +4,37 @@ html {
   margin: 0;
   padding: 0;
   font-family: "Oswald", sans-serif;
+  scroll-behavior: smooth;
+}
+
+textarea,
+input {
+  background-color: transparent;
+  border: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  background-color: transparent;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 h1,
