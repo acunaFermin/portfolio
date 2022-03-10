@@ -42,18 +42,29 @@
   <!-- descripcion -->
   <div
     id="quienSoy"
-    class="page-container"
+    class="page-container myself"
     [ngClass]="{ 'show-up': scrollIndex === 1 }"
   >
-    <h2>Sobre mi</h2>
-    <p>
-      Un ingeniero electromecánico que ha decidido explorar una vida dedicada al
-      desarrollo web y de software en general. Estoy abierto al desarrollo de
-      aplicaciones y webs, tanto front end como back end. Mi anhelo es poder
-      desarrollar con personas que tengan una basta experiencia en estos campos,
-      asi como también ambición para desarrollar grandes proyectos.
-    </p>
+    <div class="info">
+      <h2>Sobre mi</h2>
+      <p>
+        Un ingeniero electromecánico que ha decidido explorar una vida dedicada
+        al desarrollo web y de software en general.
+      </p>
+      <br />
+      <p>
+        Estoy abierto al desarrollo de aplicaciones y webs, tanto front end como
+        back end.
+      </p>
+      <br />
+      <p>
+        Mi anhelo es poder desarrollar con personas que tengan una vasta
+        experiencia en estos campos, asi como también ambición para desarrollar
+        grandes proyectos.
+      </p>
+    </div>
   </div>
+
   <!-- habilidades -->
   <div
     id="habilidades"
@@ -62,23 +73,35 @@
   >
     <h2>Habilidades</h2>
     <ul>
-      <li>Resposive web design</li>
-      <li>
-        Desarrollo de páginas y aplicaciones web en todo el stack, que necesiten
-        almacenar datos o simplemente, páginas estáticas.
-      </li>
+      <li>Resposive web design.</li>
+      <li>Desarrollo de páginas y aplicaciones web.</li>
       <li>Galerías de imagenes.</li>
       <li>Comunicación en tiempo real.</li>
       <li>Aplicaciones que requieran cálculos con cierta complejidad.</li>
-      <li>
-        Manejo de sesiones con usuarios que requieran ver contenido mas delicado
-        en función de los roles que posean.
-      </li>
+      <li>Almacenamiento de usuarios con distintos roles.</li>
       <li>
         Y cualquier otra cosa que se presente como un desafío, estaré encantado
         de poder resolverlo!
       </li>
     </ul>
+
+    <div class="habilities">
+      <div class="hab-item" [ngClass]="{ angular: scrollIndex === 2 }">
+        <h4>Angular</h4>
+      </div>
+      <div class="hab-item" [ngClass]="{ css: scrollIndex === 2 }">
+        <h4>CSS</h4>
+      </div>
+      <div class="hab-item" [ngClass]="{ node: scrollIndex === 2 }">
+        <h4>NodeJS</h4>
+      </div>
+      <div class="hab-item" [ngClass]="{ sql: scrollIndex === 2 }">
+        <h4>SQL</h4>
+      </div>
+      <div class="hab-item" [ngClass]="{ mon: scrollIndex === 2 }">
+        <h4>MongoDB</h4>
+      </div>
+    </div>
   </div>
   <!-- experciencia -->
   <div
