@@ -24,6 +24,7 @@ export class CuerpoComponent implements OnInit {
   quienSoy!: HTMLElement;
   habilidades!: HTMLElement;
   experiencia!: HTMLElement;
+  portfolio!: HTMLElement;
   form!: HTMLElement;
   elementHeights: number[] = [];
   scrollHeights: number[] = [];
@@ -45,6 +46,7 @@ export class CuerpoComponent implements OnInit {
     this.quienSoy = document.getElementById('quienSoy')!;
     this.habilidades = document.getElementById('habilidades')!;
     this.experiencia = document.getElementById('experiencia')!;
+    this.portfolio = document.getElementById('portfolio')!;
     this.form = document.getElementById('form')!;
     this.elementHeights = [
       0,
@@ -52,6 +54,7 @@ export class CuerpoComponent implements OnInit {
       this.quienSoy.scrollHeight,
       this.habilidades.scrollHeight,
       this.experiencia.scrollHeight,
+      this.portfolio.scrollHeight,
       this.form.scrollHeight,
     ];
 
