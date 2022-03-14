@@ -4,64 +4,47 @@
 ></app-barra-lateral>
 
 <div class="container-cuerpo" [ngClass]="{ 'fix-body': mailInput }">
-  <div
-    id="init"
-    class="page-container"
-    [ngClass]="{ 'show-up': scrollIndex === 0 }"
-  >
-    <div class="quienSoy">
-      <h1>Hola!,</h1>
-      <h1>Soy Fermín,</h1>
-      <h1>Desarrollador Web</h1>
-      <p>Full Stack Web Developer</p>
+  <div class="background">
+    <div
+      class="background-image"
+      [ngClass]="{ black: scrollIndex === 1 }"
+    ></div>
+
+    <!-- titulo -->
+    <div id="init" class="titulo" [ngClass]="{ 'show-up': scrollIndex === 0 }">
+      <div class="quienSoy">
+        <h1>Hola!,</h1>
+        <h1>Soy Fermín,</h1>
+        <h1>Desarrollador Web</h1>
+        <p>Full Stack Web Developer</p>
+      </div>
     </div>
-  </div>
 
-  <!-- lampara de lava -->
+    <!-- descripcion -->
 
-  <div class="curva">
-    <div class="circle c1"></div>
-    <div class="circle c2"></div>
-    <div class="circle c3"></div>
-    <div class="circle c4"></div>
-  </div>
-
-  <svg>
-    <filter id="gooey">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="40" />
-      <feColorMatrix
-        values="
-          1 0 0 0 0
-          0 1 0 0 0
-          0 0 1 0 0
-          0 0 0 60 -40
-        "
-      />
-    </filter>
-  </svg>
-  <!-- descripcion -->
-  <div
-    id="quienSoy"
-    class="page-container myself"
-    [ngClass]="{ 'show-up': scrollIndex === 1 }"
-  >
-    <div class="info">
-      <h2>Sobre mi</h2>
-      <p>
-        Un ingeniero electromecánico que ha decidido explorar una vida dedicada
-        al desarrollo web y de software en general.
-      </p>
-      <br />
-      <p>
-        Estoy abierto al desarrollo de aplicaciones y webs, tanto front end como
-        back end.
-      </p>
-      <br />
-      <p>
-        Mi anhelo es poder desarrollar con personas que tengan una vasta
-        experiencia en estos campos, asi como también ambición para desarrollar
-        grandes proyectos.
-      </p>
+    <div
+      id="quienSoy"
+      class="descripcion"
+      [ngClass]="{ 'show-up': scrollIndex === 1 }"
+    >
+      <div class="info">
+        <h2>Sobre mi</h2>
+        <p>
+          Un ingeniero electromecánico que ha decidido explorar una vida
+          dedicada al desarrollo web y de software en general.
+        </p>
+        <br />
+        <p>
+          Estoy abierto al desarrollo de aplicaciones y webs, tanto front end
+          como back end.
+        </p>
+        <br />
+        <p>
+          Mi anhelo es poder desarrollar con personas que tengan una vasta
+          experiencia en estos campos, asi como también ambición para
+          desarrollar grandes proyectos.
+        </p>
+      </div>
     </div>
   </div>
 

@@ -1,11 +1,11 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
-import { FormArray } from '@angular/forms';
 
 import { ViewportScroller } from '@angular/common';
 
 import { BtnAnimation } from './classes/animation';
+
 @Component({
   selector: 'app-cuerpo',
   templateUrl: './cuerpo.component.html',
@@ -176,15 +176,19 @@ export class CuerpoComponent implements OnInit {
           this.scrollIndex = 3;
 
           break;
-        case 'Contacto':
+        case 'Portfolio':
           this.scrollIndex = 4;
+
+          break;
+        case 'Contacto':
+          this.scrollIndex = 5;
           break;
         default:
           break;
       }
     }
     if (this.mailInput === true) {
-      this.scrollIndex = 4;
+      this.scrollIndex = 5; //poner el index de Contacto
     }
 
     setTimeout(() => {

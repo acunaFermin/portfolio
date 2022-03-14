@@ -59,9 +59,16 @@
       <h4>Experiencia</h4>
     </div>
     <div
-      (click)="buttonPressed('Contacto')"
+      (click)="buttonPressed('Portfolio')"
       class="button"
       [ngClass]="{ lighted: scrollIndex === 4 }"
+    >
+      <h4>Portfolio</h4>
+    </div>
+    <div
+      (click)="buttonPressed('Contacto')"
+      class="button"
+      [ngClass]="{ lighted: scrollIndex === 5 }"
     >
       <h4>Contacto</h4>
     </div>
