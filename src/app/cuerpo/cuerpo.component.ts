@@ -78,6 +78,14 @@ export class CuerpoComponent implements OnInit {
     this.btnAnimation.addStyle();
   }
 
+  touch: boolean = false;
+
+  @HostListener('touchstart', ['$event'])
+  onTouch = () => {
+    console.log('touched');
+    this.touch = true;
+  };
+
   @HostListener('mousewheel', ['$event'])
   onMouseWheel = (e: WheelEvent) => {
     let scroll = e.deltaY;
@@ -89,40 +97,72 @@ export class CuerpoComponent implements OnInit {
     }, 10);
   };
 
-  touchStart: number = 0;
-  @HostListener('touchstart', ['$event'])
-  onTouchStart = (e: TouchEvent | any) => {
-    if (
-      e.path[4].id === 'contacto' ||
-      e.path[5].id === 'contacto' ||
-      e.path[3].id === 'contacto'
-    ) {
-      return;
-    }
-    this.timeStart = e.timeStamp;
-    this.touchStart = e.touches[0].clientY;
-  };
-
-  @HostListener('touchend', ['$event'])
-  onTouchEnd = (e: TouchEvent | any) => {
-    if (
-      e.path[4].id === 'contacto' ||
-      e.path[5].id === 'contacto' ||
-      e.path[3].id === 'contacto'
-    ) {
+  Y: any[] = [];
+  @HostListener('window:scroll', ['$event'])
+  onScroll = (e: TouchEvent | any) => {
+    if (!this.touch) {
       return;
     }
 
-    let scroll = this.touchStart - e.changedTouches[0].clientY;
-    let scrollVelocity = scroll / (e.timeStamp - this.timeStart);
+    this.Y.push(window.scrollY);
 
-    if (Math.abs(scrollVelocity) > 0.2) {
-      this.mailInput = false;
-      this.prepareIndexToScroll(scroll);
+    if (this.Y.length > 2) {
+      this.Y.shift();
     }
+
+    let scroll = this.Y[1] - this.Y[0];
+    console.log(scroll);
+
+    // if (
+    //   e.path[4].id === 'contacto' ||
+    //   e.path[5].id === 'contacto' ||
+    //   e.path[3].id === 'contacto'
+    // ) {
+    //   return;
+    // }
+    this.mailInput = false;
+    this.prepareIndexToScroll(scroll);
   };
 
   prepareIndexToScroll(scroll: number) {
+    if (Math.abs(scroll) > 0) {
+      //scroll down
+      if (scroll > 0) {
+        console.log('window', window.scrollY + window.innerHeight * 0.2);
+        console.log('element', this.scrollHeights[this.scrollIndex + 1]);
+
+        if (
+          window.scrollY + window.innerHeight * 0.2 >
+          this.scrollHeights[this.scrollIndex + 1]
+        ) {
+          this.scrollIndex++;
+        }
+      }
+
+      //scroll up
+      if (scroll < 0) {
+        console.log(window.scrollY + window.innerHeight * 0.2);
+
+        console.log('window', window.scrollY + window.innerHeight * 0.2);
+        console.log('element', this.scrollHeights[this.scrollIndex]);
+
+        if (
+          window.scrollY + window.innerHeight * 0.2 <
+          this.scrollHeights[this.scrollIndex]
+        ) {
+          this.scrollIndex--;
+        }
+      }
+
+      console.log('index', this.scrollIndex);
+    }
+
+    if (this.touch) {
+      return;
+    }
+
+    console.log('scroll ok', this.touch);
+
     this.scrollIndex = 0;
 
     for (let height of this.scrollHeights) {
