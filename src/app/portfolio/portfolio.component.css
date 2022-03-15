@@ -2,9 +2,7 @@
   position: relative;
   display: flex;
   width: calc(100vw - 260px);
-  height: calc(100vh - 300px);
-  margin-top: 30px;
-  background-color: aliceblue;
+  height: 100%;
 }
 
 .portfolio-container {
@@ -18,90 +16,132 @@
 .portfolio-item {
   position: relative;
   display: flex;
-  width: 25%;
+  flex-direction: column-reverse;
+  justify-content: space-around;
+  width: 33.33%;
   height: 50%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  box-shadow: inset 0 0 1px white;
   cursor: pointer;
-  box-shadow: 0 0 1px white;
+  overflow: hidden;
 }
 
-.portfolio-item:before {
-  content: "";
+.tecnologies {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  /* height: 50%; */
+}
+
+.tecnologies img {
+  width: 12%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  /* height: 50%; */
+}
+
+.info h3,
+.info p {
+  padding-left: 25px;
+  padding-right: 20px;
+}
+
+.info h3 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
+  font-size: 35px;
+}
+
+.info p {
+  font-weight: 100;
+  font-size: 20px;
+}
+
+.desplegar {
   position: absolute;
-  top: 0;
+  top: 100%;
   left: 0;
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   background-color: black;
-  opacity: 0.6;
-  transition: all 1s ease-out;
+  cursor: default;
+  transition: all 0.3s ease;
 }
 
-#item-1:hover::before {
-  opacity: 0;
-  transition: all 0.1s ease-out;
+#item-1:hover .desplegar {
+  top: 0;
+}
+#item-2:hover .desplegar {
+  top: 0;
+}
+#item-3:hover .desplegar {
+  top: 0;
+}
+#item-4:hover .desplegar {
+  top: 0;
+}
+#item-5:hover .desplegar {
+  top: 0;
+}
+#item-6:hover .desplegar {
+  top: 0;
 }
 
-#item-2:hover::before {
-  opacity: 0;
-  transition: all 0.1s ease-out;
+.navegar {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
-#item-3:hover::before {
-  opacity: 0;
-  transition: all 0.1s ease-out;
+.navegar img {
+  width: 40px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
-#item-4:hover::before {
-  opacity: 0;
-  transition: all 0.1s ease-out;
+.navegar-link {
+  display: flex;
+  flex-direction: column;
 }
 
-#item-5:hover::before {
-  opacity: 0;
-  transition: all 0.1s ease-out;
+.github {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-#item-6:hover::before {
-  opacity: 0;
-  transition: all 0.1s ease-out;
+.github img {
+  width: 40px;
+  background-color: #08e275;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
-#item-7:hover::before {
-  opacity: 0;
-  transition: all 0.1s ease-out;
-}
-
-#item-8:hover::before {
-  opacity: 0;
-  transition: all 0.1s ease-out;
-}
-
-#item-9:hover::before {
-  opacity: 0;
-  transition: all 0.1s ease-out;
-}
-
-#item-10:hover::before {
-  opacity: 0;
-  transition: all 0.1s ease-out;
+.git-link {
+  display: flex;
+  flex-direction: column;
 }
 
 @media (max-width: 1024px) {
   .container {
     width: 100%;
-    /* height: calc(100vh - 400px); */
-    margin-top: 30px;
   }
 }
 
 @media (max-width: 700px) {
-  .container {
-    height: calc(100vh - 500px);
-  }
-
   .portfolio-container {
     display: flex;
     width: 100%;
@@ -109,25 +149,9 @@
     flex-wrap: wrap;
     justify-content: start;
   }
-
-  .portfolio-item {
-    position: relative;
-    display: flex;
-    width: 25%;
-    height: 50%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    cursor: pointer;
-    box-shadow: 0 0 1px white;
-  }
 }
 
 @media (max-width: 550px) {
-  .container {
-    height: calc(100vh - 200px);
-  }
-
   .portfolio-container {
     display: flex;
     width: 100%;
@@ -140,11 +164,38 @@
     position: relative;
     display: flex;
     width: 50%;
-    height: 25%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    height: 33.33%;
     cursor: pointer;
-    box-shadow: 0 0 1px white;
+  }
+
+  .info h3,
+  p {
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .info h3 {
+    font-family: "Oswald", sans-serif;
+    font-size: 25px;
+    font-weight: 200;
+  }
+
+  .info p {
+    font-weight: 100;
+    font-size: 15px;
+  }
+
+  .desplegar img {
+    width: 20px;
+  }
+
+  .desplegar {
+    font-size: 10px;
+  }
+
+  .desplegar p {
+    padding-left: 0;
   }
 }

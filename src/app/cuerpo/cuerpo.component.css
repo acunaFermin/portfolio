@@ -174,7 +174,15 @@
 }
 
 .portfolio-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 200px;
   padding-left: 100px;
+}
+
+.portfolio-component {
+  height: calc(100vh - 200px);
 }
 
 ul {
