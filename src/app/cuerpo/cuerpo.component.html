@@ -3,7 +3,7 @@
   [scrollIndex]="scrollIndex"
 ></app-barra-lateral>
 
-<div class="container-cuerpo" [ngClass]="{ 'fix-body': mailInput }">
+<div class="container-cuerpo">
   <div class="background">
     <div
       class="background-image"
@@ -30,7 +30,7 @@
       <div class="info">
         <h2>Sobre mi</h2>
         <p>
-          Un ingeniero electromecánico que ha decidido explorar una vida
+          Soy un ingeniero electromecánico que ha decidido explorar una vida
           dedicada al desarrollo web y de software en general.
         </p>
         <br />
@@ -124,7 +124,10 @@
   <div id="portfolio" class="page-container portfolio">
     <div class="portfolio-title">
       <h2>Mis Trabajos</h2>
-      <p>Algunos trabajos que hice por encargos y de cursos</p>
+      <p>
+        Algunos trabajos que he realizado este último año, podés pasar a ver el
+        contenido en la web o el código fuente
+      </p>
     </div>
     <div class="portfolio-component">
       <app-portfolio></app-portfolio>
@@ -132,15 +135,7 @@
   </div>
 
   <!-- contacto -->
-  <div
-    style="overflow-anchor: none"
-    id="form"
-    class="page-container"
-    [ngClass]="{
-      'show-up': scrollIndex === 4 || mailInput,
-      fix: mailInput
-    }"
-  >
+  <div style="overflow-anchor: none" id="form" class="page-container">
     <form
       id="contacto"
       #contacto
@@ -148,7 +143,10 @@
       (ngSubmit)="(onSubmit)"
     >
       <h2>Contactame</h2>
-      <p>Dale mandame un mnsj</p>
+      <p>
+        Tu consulta no es molestia, podés comunicarte conmigo por este medio y
+        te responderé en breve
+      </p>
 
       <div class="contacto-container">
         <div class="emiter">

@@ -82,7 +82,6 @@ export class CuerpoComponent implements OnInit {
 
   @HostListener('touchstart', ['$event'])
   onTouch = () => {
-    console.log('touched');
     this.touch = true;
   };
 
@@ -111,7 +110,6 @@ export class CuerpoComponent implements OnInit {
     }
 
     let scroll = this.Y[1] - this.Y[0];
-    console.log(scroll);
 
     // if (
     //   e.path[4].id === 'contacto' ||
@@ -128,9 +126,6 @@ export class CuerpoComponent implements OnInit {
     if (Math.abs(scroll) > 0) {
       //scroll down
       if (scroll > 0) {
-        console.log('window', window.scrollY + window.innerHeight * 0.2);
-        console.log('element', this.scrollHeights[this.scrollIndex + 1]);
-
         if (
           window.scrollY + window.innerHeight * 0.2 >
           this.scrollHeights[this.scrollIndex + 1]
@@ -141,11 +136,6 @@ export class CuerpoComponent implements OnInit {
 
       //scroll up
       if (scroll < 0) {
-        console.log(window.scrollY + window.innerHeight * 0.2);
-
-        console.log('window', window.scrollY + window.innerHeight * 0.2);
-        console.log('element', this.scrollHeights[this.scrollIndex]);
-
         if (
           window.scrollY + window.innerHeight * 0.2 <
           this.scrollHeights[this.scrollIndex]
@@ -153,15 +143,11 @@ export class CuerpoComponent implements OnInit {
           this.scrollIndex--;
         }
       }
-
-      console.log('index', this.scrollIndex);
     }
 
     if (this.touch) {
       return;
     }
-
-    console.log('scroll ok', this.touch);
 
     this.scrollIndex = 0;
 
